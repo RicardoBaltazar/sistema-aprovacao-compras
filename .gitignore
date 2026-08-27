@@ -1,0 +1,32 @@
+# Build do .NET
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# VS Code
+.vscode/
+
+# Arquivos de usuário/IDE
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente / secrets
+.env
+.env.*
+!.env.example
+
+# Certificados de desenvolvimento
+*.pfx
+
+# Arquivos temporários
+*.tmp
+*.temp

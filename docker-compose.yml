@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sistema-aprovacao-compras-api
+    working_dir: /app/SistemaAprovacaoCompras
+    volumes:
+      - ./app:/app
+    ports:
+      - "8080:8080"
+    command: dotnet run --urls http://0.0.0.0:8080
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:18
+    container_name: sistema-aprovacao-compras-postgres
+    environment:
+      POSTGRES_DB: sistema_aprovacao_compras
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
